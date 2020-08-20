@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:600,700&display=swap");
+
+body {
+	background: #2c3e50;
+	font-family: "Open Sans", sans-serif;
+}
+h1 {
+	font-weight: 700;
+}
+.container {
+	max-width: 450px;
+}
+
+.link {
+	color: inherit;
+}
+
+.link:hover {
+	color: #3498db;
+	text-decoration: none;
+}
+
+input[type="text"],
+input[type="text"]:focus {
+	font-weight: 600;
+	color: #fff;
+	border: none;
+	background: rgba(0, 0, 0, 0.2);
+	max-width: 400px;
+}
+
+.space {
+	margin-top: 10px;
+}
+
+.space2 {
+	margin-top: 30px;
+}
+.unFUser li {
+	background: #2d3436;
+	margin-bottom: 5px;
+}
+.delete {
+	cursor: pointer;
+}
