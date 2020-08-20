@@ -1,6 +1,6 @@
 # BeRude 😤
 
-### A fun tool that list all users who dont follow you back on GitHub😁
+### A fun tool that lists all users who don't follow you back on GitHub😁
 
 ### [Check it out here]
 
