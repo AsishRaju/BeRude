@@ -19,10 +19,6 @@
 
 - If you wanna know your loyal followers 😂
 
-### Side Note 😬
-
-Response for github public apis are not up to date with data you see at your profile they take some time to update , keep that in mind before you unfollow somebody by mistake 😅
-
 ### Waiting for your PR 🤝
 
 [check it out here]: https://asishraju.github.io/BeRude/

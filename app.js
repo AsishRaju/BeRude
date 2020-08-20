@@ -1,6 +1,7 @@
 const usernameRef = document.querySelector(".username");
 const listRef = document.querySelector(".unFUser");
 var todosList = [];
+var gh = new GitHub();
 const generateTemplate = (user) => {
 	const htmlTemplate = `<li class="list-group-item d-flex justify-content-between align-items-center">
     <a  class="link" target="_blank" href="${user.html_url}">${user.login}</a>
@@ -25,37 +26,27 @@ usernameRef.addEventListener("submit", (e) => {
 	e.preventDefault();
 	listRef.innerHTML = "";
 	const userName = usernameRef.inputField.value.trim();
-	let following;
-	let followers;
-	axios
-		.get(`https://api.github.com/users/${userName}/following`)
-		.then((response) => {
-			following = response.data;
-		})
-		.catch((error) => {
-			console.log(error);
-		})
-		.then(() => {
-			axios
-				.get(`https://api.github.com/users/${userName}/followers`)
-				.then(function (response) {
-					followers = response.data;
-				})
-				.catch(function (error) {
-					console.log(error);
-				})
-				.then(function () {
+
+	gh.get(`users/${userName}/followers`, { all: true }, function (err, followers) {
+		if (err) {
+			console.log(err);
+		} else {
+			gh.get(`users/${userName}/following`, { all: true }, function (err, following) {
+				if (err) {
+					console.log(err);
+				} else {
 					var diffrence = following.filter(function (obj) {
 						return !followers.some(function (obj2) {
 							return obj.login == obj2.login;
 						});
 					});
 					diffrence.forEach((user) => {
-						console.log(user);
 						generateTemplate(user);
 					});
-				});
-		});
+				}
+			});
+		}
+	});
 });
 
 if (localStorage.getItem("prevTodos")) {
