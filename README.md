@@ -21,4 +21,4 @@
 
 ### Waiting for your PR 🤝
 
-[check it out here]: https://asishraju.github.io/BeRude/
+[check it out here]: http://asishraju.me/BeRude/
