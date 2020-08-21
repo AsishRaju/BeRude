@@ -21,15 +21,23 @@
 		<div class="container">
 			<header class="text-center text-light my-4">
                 <h1 class="mb-4">Be Rude 😤</i></h1>
-                <p class="mb-4 text-center">Be Rude 😤 list all users who dont follow you back</p>
-            
-            <form class="username text-center my-4">
-                <input type="text" class="form-control m-auto" name="inputField" autocomplete="off" placeholder="Your Github Username" />
-            </form>
-        </header>
+				<p class="mb-4 text-center">Be Rude 😤 list all users who dont follow you back</p>
+				<div class="input-group mb-3">
+					<input type="text" class=" username form-control" placeholder="Your Github Username" aria-label="GitHub's username" aria-describedby="button-addon2">
+					<div class="input-group-append">
+					  <button class="submit btn btn-outline-light" type="button" id="button-addon2">Show</button>
+					</div>
+				  </div>
+		</header>
+		<div class="d-flex justify-content-center">
+			<div class="spinner-border text-light d-none" role="status">
+				<span class="sr-only">Loading...</span>
+			  </div>
+		  </div>
         <ul class="list-group unFUser mx-auto text-light">
             <!-- Auto template generator view into  js -->
         </ul>
+		<p class="mb-4 text-center error"></p>
 		
 		
 		

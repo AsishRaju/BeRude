@@ -19,6 +19,9 @@ h1 {
 	color: #3498db;
 	text-decoration: none;
 }
+.error {
+	color: #e74c3c;
+}
 
 input[type="text"],
 input[type="text"]:focus {

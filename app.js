@@ -1,6 +1,9 @@
 const usernameRef = document.querySelector(".username");
+const submitBtnRef = document.querySelector(".submit");
 const listRef = document.querySelector(".unFUser");
-var todosList = [];
+const errorRef = document.querySelector(".error");
+const spinner = document.querySelector(".spinner-border");
+
 var gh = new GitHub();
 const generateTemplate = (user) => {
 	const htmlTemplate = `<li class="list-group-item d-flex justify-content-between align-items-center">
@@ -22,15 +25,20 @@ listRef.addEventListener("click", (e) => {
 	}
 });
 
-usernameRef.addEventListener("submit", (e) => {
+submitBtnRef.addEventListener("click", (e) => {
 	e.preventDefault();
 	listRef.innerHTML = "";
-	const userName = usernameRef.inputField.value.trim();
+	errorRef.innerHTML = "";
+	const userName = usernameRef.value.trim();
+	spinner.classList.remove("d-none");
 
 	gh.get(`users/${userName}/followers`, { all: true }, function (err, followers) {
 		if (err) {
 			console.log(err);
+			spinner.classList.add("d-none");
+			errorRef.innerHTML = "User Not Found";
 		} else {
+			errorRef.innerHTML = "";
 			gh.get(`users/${userName}/following`, { all: true }, function (err, following) {
 				if (err) {
 					console.log(err);
@@ -40,18 +48,13 @@ usernameRef.addEventListener("submit", (e) => {
 							return obj.login == obj2.login;
 						});
 					});
+
 					diffrence.forEach((user) => {
 						generateTemplate(user);
 					});
+					spinner.classList.add("d-none");
 				}
 			});
 		}
 	});
 });
-
-if (localStorage.getItem("prevTodos")) {
-	JSON.parse(localStorage.getItem("prevTodos")).forEach((Element) => {
-		todosList.push(Element);
-		generateTemplate(Element);
-	});
-}
