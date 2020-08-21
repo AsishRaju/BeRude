@@ -27,6 +27,7 @@ listRef.addEventListener("click", (e) => {
 
 submitBtnRef.addEventListener("click", (e) => {
 	e.preventDefault();
+	submitBtnRef.disabled = true;
 	listRef.innerHTML = "";
 	errorRef.innerHTML = "";
 	const userName = usernameRef.value.trim();
@@ -53,6 +54,7 @@ submitBtnRef.addEventListener("click", (e) => {
 						generateTemplate(user);
 					});
 					spinner.classList.add("d-none");
+					submitBtnRef.disabled = false;
 				}
 			});
 		}
