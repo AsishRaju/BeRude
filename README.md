@@ -2,7 +2,10 @@
 
 ### A fun tool that lists all users who don't follow you back on GitHub😁
 
-### [Check it out here] <img src="https://forthebadge.com/images/badges/made-with-javascript.svg" alt="" class="mx-auto d-block space" />
+<img src="https://forthebadge.com/images/badges/made-with-javascript.svg" alt="" class="mx-auto d-block space" />
+
+### [Check it out here] 
+
 
 ## Overview 👀
 
